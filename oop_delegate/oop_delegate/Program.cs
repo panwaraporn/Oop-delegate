@@ -17,9 +17,15 @@ namespace oop_delegate
             //2. create delegate object
             // MyDelegate delo = new MyDelegate(p.Printo);
             // MyDelegate dels = new MyDelegate(Prints);
-            MyDelegate del = new MyDelegate(Prints);
-            del += new MyDelegate(p.Printo);
+            MyDelegate del1 = new MyDelegate(Prints);
+            MyDelegate del2 = new MyDelegate(p.Printo);
+            MyDelegate del = del2 + del1;
+            //del += new MyDelegate(p.Printo);
+
             del("Hello");
+            del -= del1;
+            del1("After -=");
+
             //delo("Hello object");
             //dels("Hello Static");
 
